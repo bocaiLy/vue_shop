@@ -1,0 +1,265 @@
+/*CSS reset===============================*/
+/*优化显示文本*/
+html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+body{
+    color:#333;
+    font-size: .3rem;
+    font-family:'微软雅黑';
+    -webkit-overflow-scrolling: touch; /* 移动web页面支持弹性滚动 */
+    /*禁止字体大小自动适应 */
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+input,textarea,select{
+    font-size:100%;
+    font-family:inherit;
+    padding: 0;
+    outline: none; /*得到焦点时外层光圈去掉*/
+    /*resize: none; !*用户是否可以调整元素尺寸*!*/
+    /*-webkit-appearance: none;!*去除浏览器默认样式*!*/
+    /*-moz-appearance:none;*/
+    border: 1px solid #999;
+}
+
+/*在安卓正常显示*/
+input[type="checkbox"]{
+    -webkit-appearance: checkbox;
+    border: inherit;
+}
+input[type="radio"]{
+    -webkit-appearance: radio;
+    border: inherit;
+}
+
+body,h1,h2,h3,p,ul,ol,form{
+    margin:0;
+}
+
+ul,ol{
+    padding-left:0;
+    list-style-type:none;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+img{
+    vertical-align: middle;
+}
+input:hover{
+    outline: 0;
+}
+/*
+ *是软键盘出现search 按钮
+ *必须设置input的type类型为search，并且被form元素包裹，form元素要有action属性
+ */
+
+
+/*通用css===============================*/
+/*浮动=====================*/
+.f_left{float:left;}
+.f_right{float:right;}
+
+/*文字对齐=================*/
+.t_center{text-align:center;}
+.t_right{text-align:right;}
+.t_left{text-align:left;}
+
+/*颜色=====================*/
+.c_000{color:#000;}
+.c_333{color:#333;}
+.c_666{color:#666;}
+.c_999{color:#999;}
+.c_fff{color:#fff;}
+
+/*字体大小===================*/
+.f_18{font-size: .18rem;}
+.f_20{font-size: .20rem;}
+.f_24{font-size: .24rem;}
+.f_26{font-size: .26rem;}
+.f_30{font-size: .30rem;}
+
+/*基线对齐方式===============*/
+.v-middle{vertical-align:middle;}
+
+/*margin===================*/
+.m_3{margin: .3rem;}
+.ml_3{margin-left: .3rem;}
+.mr_3{margin-right: .3rem;}
+.m_33{margin: .3rem 0;}
+.m_3_3{margin:0 .3rem;}
+
+/*padding==================*/
+.p_3{padding: .3rem;}
+.pl_3{padding-left: .3rem;}
+.pr_3{padding-right: .3rem;}
+.p_33{padding: .3rem 0;}
+.p_3_3{padding: 0 .3rem;}
+
+/*定位方式==================*/
+.rel{position:relative;}
+.abs{position:absolute;}
+
+/*标签状态==================*/
+.d_n{display:none;}
+.d_b{display:block;}
+.d_i{display:inline;}
+
+/*超出部分效果===============*/
+.o_h{overflow:hidden;}
+.o_s{overflow:scroll;}
+
+.a_d{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/*清楚浮动==================*/
+.clearfix:before,
+.clearfix:after{
+    content: '';
+    line-height: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+/*伪元素===================*/
+.i-b:before,.i-a:after{
+    content: "";
+    display: inline-block;
+    width: .8rem;
+    height: .8rem;
+    vertical-align: middle;
+}
+
+/*弹性盒子==================*/
+.g-flex {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+}
+
+.g-f-auto {
+    -moz-flex: 1;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+/*超出 行的部分省略...=======*/
+.f_text1{
+    width: 100%;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
+.f_text2{
+    overflow: hidden;
+    text-overflow: -o-ellipsis-lastline;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/*==========================底部弹出*/
+.m-botAlert {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(-2rem);
+    -ms-transform: translateY(-2rem);
+    -moz-transform: translateY(-2rem);
+    -webkit-transform: translateY(-2rem);
+    -o-transform: translateY(-2rem);
+    -webkit-animation: alert 1s;
+    animation: alert 1s;
+    text-align: center;
+    font-size: .3rem;
+    z-index: 999;
+}
+.alert-hide {
+    opacity: 0;
+    -webkit-animation: alert-hide .5s;
+    animation: alert-hide .5s;
+}
+.m-botAlert .m-botAlert-con {
+    display: inline-block;
+    max-width: 70%;
+    word-break: break-all;
+    padding: 0.2rem .3rem;
+    border-radius: .04rem;
+    margin: 0 auto;
+    background: #333;
+    color: #fff;
+    line-height: .4rem;
+}
+
+@-webkit-keyframes alert {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+        -ms-transform: translateY(0); /* IE 9 */
+        -moz-transform: translateY(0); /* Firefox */
+        -webkit-transform: translateY(0); /* Safari 和 Chrome */
+        -o-transform: translateY(0); /* Opera */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-2rem);
+        -ms-transform: translateY(-2rem);
+        -moz-transform: translateY(-2rem);
+        -webkit-transform: translateY(-2rem);
+        -o-transform: translateY(-2rem);
+    }
+}
+
+@keyframes alert {
+    from {
+        opacity: 0;
+        transform: translateY(0);
+        -ms-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -o-transform: translateY(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(-2rem);
+        -ms-transform: translateY(-2rem);
+        -moz-transform: translateY(-2rem);
+        -webkit-transform: translateY(-2rem);
+        -o-transform: translateY(-2rem);
+    }
+}
+
+@-webkit-keyframes alert-hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes alert-hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/*页面公共样式*/
+.main{
+    margin: 1rem 0 1.2rem;
+}
