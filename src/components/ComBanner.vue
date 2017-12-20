@@ -22,7 +22,6 @@
         </div>
         <div class="swiper-container" v-else-if="img==1">
             <div class="swiper-wrapper">
-                <!--<div class="swiper-slide" v-for="str in goodsImg" :style="{ background: 'url(' + str + ')' }"></div>-->
                 <div class="swiper-slide" v-for="str in goodsImg">
                     <img :src="str">
                 </div>
@@ -30,7 +29,6 @@
             <div class="swiper-pagination swiper-pagination-white"></div>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -40,8 +38,6 @@
     import '../../static/css/swiper.min.css';
     export default {
         props: ['listImg','goodsImg','img'],
-
-
         created(){
             console.log(this.img);
             console.log(this.goodsImg);
@@ -52,10 +48,7 @@
                 pagination: '.swiper-pagination',
                 paginationClickable: true,
                 loop: true,
-                autoplay: 2000,
-//                onTouchEnd: function() {
-//                    swiper.startAutoplay()
-//                }
+                autoplay: 1500,
             });
         }
     }

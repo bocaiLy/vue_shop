@@ -12,14 +12,14 @@
       <div class="left"><img src="../assets/back.png" @click="goBack"></div>
       <h3 class="g-f-auto">商品详情</h3>
       <div class="share">
-        <div>赚￥{{brokerage}}5</div>
+        <div>赚￥{{goods.goods_brokerage}}</div>
       </div>
     </div>
   </header>
 </template>
 <script>
   export default{
-      props: ['hShow','brokerage'],
+      props: ['hShow','goods'],
       data(){
           return{
 

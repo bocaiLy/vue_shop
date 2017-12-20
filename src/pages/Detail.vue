@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <com-header :hShow="hShow"></com-header>
+        <com-header :hShow="hShow" :goods="goods" v-if="flag"></com-header>
         <div class="main">
             <com-banner class="banner" :goodsImg="goodsImg" :img="img" v-if="flag"></com-banner>
             <div class="goodsDel">
@@ -108,11 +108,6 @@
             ComHeader,
             ComBanner,
         },
-//        watch:{
-//            goods:function (dd) {
-//
-//            }
-//        },
         created(){
             this.$http.get("http://bocai.cn/goods").then((res) => {
 //                this.$route.query.id 获取URL参数
@@ -127,14 +122,11 @@
                     }
                 },
             );
-
 //            不使用箭头函数
 //            this.$http.get('http://bocai.cn/goods').then(function (res) {
 //                console.log(res.body)
 //            })
         },
-
-//        router
     }
 </script>
 <style>
