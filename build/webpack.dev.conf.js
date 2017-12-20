@@ -11,37 +11,6 @@ const portfinder = require('portfinder')
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
-//首先
-// nodejs开发框架express，用来简化操作
-const express = require('express')
-// 创建node.js的express开发框架的实例
-const app = express()
-// 引用的json地址
-var appData = require('../data.json')
-// json某一个key
-var books = appData.books
-
-var apiRoutes = express.Router()
-app.use('/api', apiRoutes)
-
-// 在devServer选项中添加以下内容
-// before(app){
-//
-// }
-apiRoutes.get('/api/books', (req, res) => {
-    res.json({
-        data: books
-    }).catch(function (err) {
-    res.jsonp(data)
-})
-})
-apiRoutes.post('/books', function (req, res) { //注意这里改为post就可以了
-    res.json({
-        error: 0,
-        data: books
-    });
-})
-
 
 
 const devWebpackConfig = merge(baseWebpackConfig, {

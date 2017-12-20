@@ -64,9 +64,6 @@
             goBack(){
                 window.history.back();
             },
-            click(){
-                this.jsApi.alertBottom('ff');
-            }
         }
     }
 </script>

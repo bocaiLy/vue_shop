@@ -38,6 +38,11 @@
     import '../../static/css/swiper.min.css';
     export default {
         props: ['listImg','goodsImg','img'],
+        data(){
+            return{
+
+            }
+        },
         created(){
             console.log(this.img);
             console.log(this.goodsImg);
