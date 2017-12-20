@@ -22,9 +22,9 @@ export default Mock.mock(
                 "goods_stock|50-100":1,//库存
                 "goods_size":"1公斤",//规格
                 "goods_profit|1-10":1,//收益
-                "goods_detail":'@cword(10,80)',//详情
+                "goods_detail":1,//详情
                 "goods_parameter":'@cword(10,80)',//参数
-                "goods_service":1,//客服
+                "goods_service":'@cword(10,80)',//客服
 
             },
             {
@@ -42,9 +42,9 @@ export default Mock.mock(
                 "goods_stock|50-100":1,//库存
                 "goods_size":"2公斤",//规格
                 "goods_profit|1-10":1,//收益
-                "goods_detail":'@cword(10,80)',//详情
+                "goods_detail":2,//详情
                 "goods_parameter":'@cword(10,80)',//参数
-                "goods_service":2,//客服
+                "goods_service":'@cword(10,80)',//客服
 
             },
             {
@@ -62,9 +62,9 @@ export default Mock.mock(
                 "goods_stock|50-100":1,//库存
                 "goods_size":"3公斤",//规格
                 "goods_profit|1-10":1,//收益
-                "goods_detail":'@cword(10,80)',//详情
+                "goods_detail":3,//详情
                 "goods_parameter":'@cword(10,80)',//参数
-                "goods_service":3,//客服
+                "goods_service":'@cword(10,80)',//客服
 
             },
             {
@@ -82,9 +82,9 @@ export default Mock.mock(
                 "goods_stock|50-100":1,//库存
                 "goods_size":"4公斤",//规格
                 "goods_profit|1-10":1,//收益
-                "goods_detail":'@cword(10,80)',//详情
+                "goods_detail":4,//详情
                 "goods_parameter":'@cword(10,80)',//参数
-                "goods_service":4,//客服
+                "goods_service":'@cword(10,80)',//客服
 
             },
         ]

@@ -1,16 +1,14 @@
 <template>
     <ul class="goods_ul clearfix">
         <li class="goods_li" v-for="item in goods">
-            <!--<router-link to="detail" class="goods_a" :id="item.goods_id">-->
-            <!--<router-link :to="{ path:'detail', query:{ id: item.goods_id }}" class="goods_a" :id="item.goods_id">-->
-            <a v-bind:href="'detail?id='+item.goods_id" class="goods_a" :id="item.goods_id">
+            <router-link :to="{ path:'detail', query:{ id: item.goods_id }}" class="goods_a" :id="item.goods_id">
                 <div class="goods_img">
                     <img v-bind:src="item.goods_img[0]">
                     <div class="profit">收益{{item.goods_profit}}%</div>
                 </div>
                 <p class="goods_price">￥<span class="cur">{{item.goods_price}}</span>元<del>￥<span>{{item.goods_market_price}}</span>元</del></p>
                 <p class="goods_name f_text2">{{item.goods_name}}</p>
-            </a>
+            </router-link>
         </li>
     </ul>
 
@@ -18,7 +16,6 @@
 <script>
     import data from '../mock/goods';
     export default{
-//        props: ['price', 'title','img','market_price'],
         data(){
             return {
                 goods:[],

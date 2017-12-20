@@ -28,7 +28,7 @@
                 </ul>
                 <div class="other_con p_3">
                     <div v-show="tap=='one'">
-                       {{goods.goods_detail}}2
+                       商品id{{goods.goods_detail}}
                     </div>
                     <div v-show="tap=='two'">
                         {{goods.goods_parameter}}
@@ -50,7 +50,7 @@
 <script>
     import ComHeader from '../components/ComHeader'
     import ComBanner from '../components/ComBanner'
-    //使用mockjs局限  list.vue页面已经用过，goods_id会累加，固复制一个
+    //使用mockjs局限  list.vue页面已经用过，goods_id会累加，故复制一个
     import data from '../mock/goods';
     //  导入图片
     import a from '../assets/banner_1.png'
