@@ -11,12 +11,26 @@
     4.css样式
 -->
 <template>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="str in listImg" :style="{ background: 'url(' + str.url + ') center/cover' }"></div>
+    <div>
+        <div class="swiper-container" v-if="img==2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" v-for="str in listImg">
+                    <img :src="str">
+                </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-white"></div>
         </div>
-        <div class="swiper-pagination swiper-pagination-white"></div>
+        <div class="swiper-container" v-else-if="img==1">
+            <div class="swiper-wrapper">
+                <!--<div class="swiper-slide" v-for="str in goodsImg" :style="{ background: 'url(' + str + ')' }"></div>-->
+                <div class="swiper-slide" v-for="str in goodsImg">
+                    <img :src="str">
+                </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-white"></div>
+        </div>
     </div>
+
 </template>
 
 <script>
@@ -25,9 +39,15 @@
     import '../../static/js/swiper.min';
     import '../../static/css/swiper.min.css';
     export default {
-        props: ['listImg'],
+        props: ['listImg','goodsImg','img'],
+
+
+        created(){
+            console.log(this.img);
+            console.log(this.goodsImg);
+            console.log(this.listImg);
+        },
         mounted() {
-            console.log('mounted', this)
             var swiper = new Swiper('.swiper-container', {
                 pagination: '.swiper-pagination',
                 paginationClickable: true,
@@ -46,9 +66,9 @@
         width: 100%;
         height: 3.5rem;
     }
-    .swiper-slide {
-        background-position: center;
-        background-size: cover;
+    .swiper-slide img{
+        width: 100%;
+        height: 100%;
     }
     .swiper-pagination-bullet {
         width:0.2rem;

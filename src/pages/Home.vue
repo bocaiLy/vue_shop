@@ -4,7 +4,7 @@
         <!-- 由于html不区分大小写，所以js中驼峰命名方式在html中要改成用短横线连接的形式 -->
         <com-header :hShow="hShow"></com-header>
         <div class="main">
-            <com-banner class="banner" :listImg="listImg"></com-banner>
+            <com-banner class="banner" :listImg="listImg" :img="img"></com-banner>
             <div class="nav">
                 <ul class="clearfix g-flex">
                     <li class="g-f-auto" v-for="item in navList">
@@ -24,7 +24,7 @@
                             ￥<span>{{item.goods_price}}</span>
                             <del class="market">￥{{item.goods_market_price}}</del>
                         </p>
-                        <router-link to="/hh" class="i-b">
+                        <router-link to="/" class="i-b">
                             剩余：3天20小时
                             <span>去抢购</span>
                         </router-link>
@@ -35,15 +35,6 @@
                 <h3>店铺热卖</h3>
             </div>
             <list></list>
-            <!--<ul class="goods_ul clearfix">-->
-                <!--<list-->
-                        <!--v-for="item in goods"-->
-                        <!--:price="item.goods_price"-->
-                        <!--:market_price="item.goods_market_price"-->
-                        <!--:img="item.goods_img"-->
-                        <!--:title="item.goods_name">-->
-                <!--</list>-->
-            <!--</ul>-->
         </div>
         <com-footer class="active_1"></com-footer>
     </div>
@@ -57,7 +48,7 @@
     import List from '../components/List'
     import ComBanner from '../components/ComBanner'
     import data from '../mock/sales';
-//    import data from '../mock/goods';
+
 
     //  导入图片
     import a from '../assets/banner_1.png'
@@ -71,38 +62,32 @@
         data () {
             return {
                 hShow:'A',
-//                goods: [],
                 sales:[],
-                listImg:[
-                    {
-                        url:a
-                    },{
-                        url:b
-                    }
-                ],
+                listImg:[a,b],
+                img:2,
                 navList:[
                     {
-                        name:'土特干货',
+                        name:'水果',
                         link:'#',
                         img:c_1
                     },
                     {
-                        name:'生鲜',
+                        name:'零食',
                         link:'#',
                         img:c_2
                     },
                     {
-                        name:'粮油米面',
+                        name:'饮料',
                         link:'#',
                         img:c_3
                     },
                     {
-                        name:'零食',
+                        name:'宵夜',
                         link:'#',
                         img:c_4
                     },
                     {
-                        name:'酒类茶饮',
+                        name:'早餐',
                         link:'#',
                         img:c_5
                     }

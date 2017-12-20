@@ -9,21 +9,26 @@
       </router-link>
     </div>
     <div v-else-if="hShow == 'B'" class="g-flex" style="background: #fff;">
-      <div class="left"><img src="../assets/back.png"></div>
+      <div class="left"><img src="../assets/back.png" @click="goBack"></div>
       <h3 class="g-f-auto">商品详情</h3>
       <div class="share">
-        <div>赚￥{{}}5</div>
+        <div>赚￥{{brokerage}}5</div>
       </div>
     </div>
   </header>
 </template>
 <script>
   export default{
-      props: ['hShow'],
+      props: ['hShow','brokerage'],
       data(){
           return{
 
           }
+      },
+      methods: {
+          goBack(){
+              window.history.back();
+          },
       }
   }
 </script>
